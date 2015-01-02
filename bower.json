@@ -1,0 +1,15 @@
+{
+  "name": "Team Gestion",
+  "description": "An basic app to manage team",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ElXi/TeamGestion.git",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "html5-boilerplate": "~4.3.0"
+  }
+}
