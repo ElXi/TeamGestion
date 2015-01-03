@@ -1,5 +1,21 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<table>
+	<input type="text" ng-model="nameFilter" placeholder="Search..."/>
+	<thead>
+		<tr><th colspan="5">Effectif, saison 2014/2015</th></tr>	
+	</thead>
+	<tbody>
+		<tr ng-repeat="player in players | filter: searchFilter" ng-mouseenter="enter($index)" ng-mouseleave="leave()">
+			<td>{{$index +1}}</td>
+			<td>{{player.name}}</td>
+			<td>{{player.surname}}</td>
+			<td>{{player.lastName}}</td>
+			<td>{{player.role}}</td>	
+		</tr>	
+	</tbody>	
+</table>
+<hr/>
+<nav id="detail" ng-show="affiche">
+	Birthdate: {{players[currentIndex].birthdate}} <br/>
+	Email: {{players[currentIndex].email}} <br/>
+	Year of team: {{players[currentIndex].yearTeam}} <br/>
+</nav>

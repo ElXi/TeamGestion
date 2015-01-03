@@ -9,6 +9,70 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', [function() {
+.controller('View2Ctrl', ["$scope", function($scope) {
 
+	$scope.affiche = false;
+	$scope.currentIndex = 0;
+
+	$scope.searchFilter = function(player) {
+		var keyword = new RegExp($scope.nameFilter, 'i');
+		return !$scope.nameFilter || keyword.test(player.name);
+	};
+
+	$scope.enter = function(index) {
+		$scope.affiche = true;
+		$scope.currentIndex = index;
+	}
+
+	$scope.leave = function() {
+		$scope.affiche = false;
+	}
+
+	$scope.players = [
+		{
+			name: "Fabrice",
+			surname: "Fabihno",
+			lastName: "Betillou",
+			role: "Attaquant",	
+			birthdate: "02/02/1994",
+			email: "fab.bet@gmail.com",	
+			yearTeam: 3,	
+		},
+		{
+			name: "Vincent",
+			surname: "Dudu",
+			lastName: "Durvelle",
+			role: "Milieu",
+			birthdate: "22/04/1995",
+			email: "dudu24@gmail.com",	
+			yearTeam: 2,			
+		},		
+		{
+			name: "Patrick",
+			surname: "Pat",
+			lastName: "Faucher",
+			role: "Défenseur",	
+			birthdate: "14/06/1982",
+			email: "pat.faucher@gmail.com",	
+			yearTeam: 5,		
+		},
+		{
+			name: "Alexis",
+			surname: "Xi",
+			lastName: "Lombard",
+			role: "Milieu",
+			birthdate: "15/02/1986",
+			email: "lexi.lom@gmail.com",	
+			yearTeam: 5,			
+		},
+		{
+			name: "Thomas",
+			surname: "Tom",
+			lastName: "Hachy",
+			role: "Attaquant",			
+			birthdate: "04/12/1978",
+			email: "tom.hac@gmail.com",	
+			yearTeam: 5,
+		}
+	];				 
 }]);
