@@ -11,6 +11,10 @@ angular.module('myApp.view2', ['ngRoute'])
 
 .controller('View2Ctrl', ["$scope", function($scope) {
 
+	//Gestion Menu
+	angular.element("#home").removeClass("active");
+	angular.element("#team").addClass("active");
+	
 	$scope.affiche = false;
 	$scope.currentIndex = 0;
 

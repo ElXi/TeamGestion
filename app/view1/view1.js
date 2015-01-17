@@ -11,4 +11,8 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl', [function() {
 
+	//Gestion Menu
+	angular.element("#team").removeClass("active");
+	angular.element("#home").addClass("active");
+
 }]);

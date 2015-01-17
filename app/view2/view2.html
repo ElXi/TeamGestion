@@ -1,21 +1,36 @@
-<table>
-	<input type="text" ng-model="nameFilter" placeholder="Search..."/>
-	<thead>
-		<tr><th colspan="5">Effectif, saison 2014/2015</th></tr>	
-	</thead>
-	<tbody>
-		<tr ng-repeat="player in players | filter: searchFilter" ng-mouseenter="enter($index)" ng-mouseleave="leave()">
-			<td>{{$index +1}}</td>
-			<td>{{player.name}}</td>
-			<td>{{player.surname}}</td>
-			<td>{{player.lastName}}</td>
-			<td>{{player.role}}</td>	
-		</tr>	
-	</tbody>	
-</table>
-<hr/>
-<nav id="detail" ng-show="affiche">
-	Birthdate: {{players[currentIndex].birthdate}} <br/>
-	Email: {{players[currentIndex].email}} <br/>
-	Year of team: {{players[currentIndex].yearTeam}} <br/>
-</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12 col-md-12">
+			<input type="text" ng-model="nameFilter" placeholder="Search..."/>
+			<h2 class="sub-header">Effectif, saison 2014/2015</h2>
+			<div class="table-responsive">
+				<table class="table table-striped">	
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Prénom</th>
+							<th>Surnom</th>
+							<th>Nom</th>
+							<th>Rôle</th>
+						</tr>	
+					</thead>
+					<tbody>
+						<tr ng-repeat="player in players | filter: searchFilter" ng-mouseenter="enter($index)" ng-mouseleave="leave()">
+							<td>{{$index +1}}</td>
+							<td>{{player.name}}</td>
+							<td>{{player.surname}}</td>
+							<td>{{player.lastName}}</td>
+							<td>{{player.role}}</td>	
+						</tr>	
+					</tbody>	
+				</table>
+			</div>	
+			<hr/>
+			<nav id="detail" ng-show="affiche">
+				Birthdate: {{players[currentIndex].birthdate}} <br/>
+				Email: {{players[currentIndex].email}} <br/>
+				Year of team: {{players[currentIndex].yearTeam}} <br/>
+			</nav>
+		</div>
+	</div>
+</div>			
