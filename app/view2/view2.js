@@ -13,6 +13,7 @@ angular.module('myApp.view2', ['ngRoute'])
 
 	//Gestion Menu
 	angular.element("#home").removeClass("active");
+	angular.element("#calendrier").removeClass("active");
 	angular.element("#team").addClass("active");
 	
 	$scope.affiche = false;
@@ -25,7 +26,7 @@ angular.module('myApp.view2', ['ngRoute'])
 
 	$scope.enter = function(index) {
 		$scope.affiche = true;
-		$scope.currentIndex = index;
+		$scope.currentIndex = index-1;
 	}
 
 	$scope.leave = function() {
@@ -34,6 +35,7 @@ angular.module('myApp.view2', ['ngRoute'])
 
 	$scope.players = [
 		{
+			id: 1,
 			name: "Fabrice",
 			surname: "Fabihno",
 			lastName: "Betillou",
@@ -43,6 +45,7 @@ angular.module('myApp.view2', ['ngRoute'])
 			yearTeam: 3,	
 		},
 		{
+			id: 2,
 			name: "Vincent",
 			surname: "Dudu",
 			lastName: "Durvelle",
@@ -52,6 +55,7 @@ angular.module('myApp.view2', ['ngRoute'])
 			yearTeam: 2,			
 		},		
 		{
+			id: 3,
 			name: "Patrick",
 			surname: "Pat",
 			lastName: "Faucher",
@@ -61,6 +65,7 @@ angular.module('myApp.view2', ['ngRoute'])
 			yearTeam: 5,		
 		},
 		{
+			id: 4,
 			name: "Alexis",
 			surname: "Xi",
 			lastName: "Lombard",
@@ -70,6 +75,7 @@ angular.module('myApp.view2', ['ngRoute'])
 			yearTeam: 5,			
 		},
 		{
+			id: 5,
 			name: "Thomas",
 			surname: "Tom",
 			lastName: "Hachy",

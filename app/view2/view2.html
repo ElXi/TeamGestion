@@ -15,7 +15,7 @@
 						</tr>	
 					</thead>
 					<tbody>
-						<tr ng-repeat="player in players | filter: searchFilter" ng-mouseenter="enter($index)" ng-mouseleave="leave()">
+						<tr ng-repeat="player in players | filter: searchFilter" ng-mouseenter="enter(player.id)" ng-mouseleave="leave()">
 							<td>{{$index +1}}</td>
 							<td>{{player.name}}</td>
 							<td>{{player.surname}}</td>
@@ -26,11 +26,25 @@
 				</table>
 			</div>	
 			<hr/>
-			<nav id="detail" ng-show="affiche">
-				Birthdate: {{players[currentIndex].birthdate}} <br/>
-				Email: {{players[currentIndex].email}} <br/>
-				Year of team: {{players[currentIndex].yearTeam}} <br/>
-			</nav>
+			<h3 class="sub-header" ng-show="affiche">Informations complémentaires</h3>
+			<div class="table-responsive" id="detail" ng-show="affiche">
+				<table class="table table-striped">	
+					<thead>
+						<tr>
+							<th>Naissance</th>
+							<th>Email</th>
+							<th>Expérience</th>
+						</tr>	
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{players[currentIndex].birthdate}}</td>
+							<td>{{players[currentIndex].email}}</td>
+							<td>{{players[currentIndex].yearTeam}}</td>	
+						</tr>	
+					</tbody>	
+				</table>
+			</div>
 		</div>
 	</div>
 </div>			
